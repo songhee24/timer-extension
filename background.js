@@ -1,7 +1,7 @@
-let time = 0;
+chrome.alarms.create({
+    periodInMinutes: 1 / 60,
+})
 
-
-setInterval(() => {
-    time += 1;
-    console.log(time)
-}, 1000)
+chrome.alarms.onAlarm.addEventListener((alarm) => {
+    console.log(alarm)
+})
