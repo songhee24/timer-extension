@@ -27,3 +27,15 @@ chrome.storage.sync.get(["name"], (result) => {
 const startBtn = document.getElementById('start')
 const stopBtn = document.getElementById('stop')
 const resetBtn = document.getElementById('reset')
+
+startBtn.addEventListener('click', () => {
+    chrome.storage.local.set({isRunning: true}, (result) => {});
+})
+
+stopBtn.addEventListener('click', () => {
+    chrome.storage.local.set({isRunning: false}, (result) => {});
+})
+
+resetBtn.addEventListener('click', () => {
+    chrome.storage.local.set({isRunning: false, timer: 0}, (result) => {});
+})
