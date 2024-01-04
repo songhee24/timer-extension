@@ -1,7 +1,13 @@
 const timeElement = document.getElementById('time')
 const nameElement = document.getElementById('name')
+const timerElement = document.getElementById('timer')
 const currentTime = new Date().toLocaleTimeString()
 timeElement.textContent = `The time is: ${currentTime}`
+
+chrome.storage.local.get(["timer"], (result) => {
+    const timer = result.timer ?? 0
+    timerElement.textContent = `The timer is at: ${timer} seconds`
+});
 
 // chrome.action.setBadgeText({
 //     text: 'TIME',
