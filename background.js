@@ -3,5 +3,10 @@ chrome.alarms.create({
 })
 
 chrome.alarms.onAlarm.addEventListener((alarm) => {
-    console.log(alarm)
+    chrome.storage.local.get(['timer'], (result) => {
+        const time = result.timer ?? 0
+        chrome.storage.local.set({
+            timer: time + 1
+        })
+    })
 })
