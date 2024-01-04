@@ -23,3 +23,7 @@ chrome.storage.sync.get(["name"], (result) => {
     console.log("Value is " + JSON.stringify(result));
     nameElement.textContent = `Your name is ${result.name}`
 });
+
+const startBtn = document.getElementById('start')
+const stopBtn = document.getElementById('stop')
+const resetBtn = document.getElementById('reset')
