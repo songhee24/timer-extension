@@ -10,4 +10,5 @@ saveBtn.addEventListener('click',() => {
 
 chrome.storage.sync.get(["name"], (result) => {
     console.log("Value is " + JSON.stringify(result));
+    nameInput.value = result.name
 });
